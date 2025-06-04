@@ -52,9 +52,8 @@ h2 {
 }
 .footer {
     position: absolute;
-    display: inline-block;
+    display: flex;
     width: 100%;
-    bottom: 0;
     align-items: center;
     justify-content: center;
     height: 75px;

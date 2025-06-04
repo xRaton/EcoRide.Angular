@@ -1,0 +1,22 @@
+<router-outlet>
+<main>
+  <h1 class="text-center pt-4">Qui sommes-nous?</h1>
+  <h2 class="text-center pb-4">Nous sommes une entreprise écoresponsable qui vous propose des covoiturages écologiques près de chez vous.</h2>
+  <div class="container-flex align-items-center ">
+    <div class="row justify-content-center ">
+      <div class="col-lg-4"><img src="assets/img/covoiturage-696x464.jpg"class="img-fluid rounded"></div>
+      <div class="col-lg-4 bg-primary rounded"><p class="text-dark" width="300" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit sit amet libero sed ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis enim eros, consequat sed metus eget, ultricies aliquet leo. Maecenas aliquet eu urna quis sodales. Mauris dapibus eget magna quis commodo. Vestibulum tempor scelerisque erat, vulputate vestibulum lectus ullamcorper in. Nulla sagittis rutrum tincidunt. </p></div>
+      <div class="col-lg-4"><img src="assets/img/istockphoto-1150571315-612x612.jpg"class="img-fluid rounded"></div>
+    </div>
+  </div>
+  <h1 class="text-center p-4">Besoin d'un trajet ?</h1>
+  <div class="trip-list text-center">
+    <h2>Trajets disponibles :</h2>
+      <ul>
+        <li *ngFor="let trip of trips">
+            <p>{{trip.pseudo}} - {{trip.photo}} - {{trip.note}}/5 - {{ trip.departure }} - {{ trip.destination }} - {{ trip.date }} - {{ trip.seatsAvailable }} places disponibles - {{ trip.price}} euro - éco: {{trip.eco}} </p>
+        </li>
+      </ul>
+  </div>
+</main>
+</router-outlet>

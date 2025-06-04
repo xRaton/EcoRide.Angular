@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 
 interface Trip {
 id: number;
@@ -21,8 +22,7 @@ eco: boolean;
     FormsModule,
     CommonModule,
     RouterOutlet,
-    RouterLink,
-    RouterLinkActive
+    RouterModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

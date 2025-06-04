@@ -3,13 +3,16 @@ import { AuthService } from '../authentification';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-connexion',
+  standalone:true,
   imports: [
     FormsModule,
     CommonModule,
     RouterOutlet,
+
   ],
   templateUrl: './connexion.component.html',
   styleUrl: './connexion.component.scss'
@@ -26,7 +29,7 @@ export class ConnexionComponent {
       this.authService.login(this.username, this.password).subscribe(
         (response) => {
           this.authService.setToken(response.token);
-          this.router.navigate(['/']); // Rediriger vers la page d'accueil
+          this.router.navigate(['/accueil']); // Rediriger vers la page d'accueil
         },
         (error) => {
           this.errorMessage = 'Nom d\'utilisateur ou mot de passe incorrect';

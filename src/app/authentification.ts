@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = 'http://localhost/phpmyadmin/sql.php?server=1&db=identification&table=utilisateur&pos=0';
   private tokenSubject = new BehaviorSubject<string | null>(null);
 
   constructor(private http: HttpClient) {}

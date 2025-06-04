@@ -4,56 +4,36 @@
             <img src="assets/img/image-removebg-preview.png" alt="EcoRide" width="130" height="100">
         </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>        
-      <div class="collapse navbar-collapse justify-content-end gap-2" id="navbarCollapse">
-        <ul class="navbar-nav p-4">
-          <li class="nav-item p-2">
-            <a class="nav-link text-dark" routerLink="/" routerLinkActive="active"><h1> Accueil</h1></a>
-          </li>
-          <li class="nav-item p-2">
-            <a class="nav-link text-dark" routerLink="/inscription" routerLinkActive="active"><h1>inscription</h1></a>
-          </li>
-          <li class="nav-item p-2">
+          <span class="navbar-toggler-icon"></span>
+        </button>        
+        <div class="collapse navbar-collapse justify-content-end gap-2" id="navbarCollapse">
+            <ul class="navbar-nav p-4">
+                <li class="nav-item p-2">
+                    <a class="nav-link text-dark" routerLink="/accueil" routerLinkActive="active"><h1> Accueil</h1></a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link text-dark" routerLink="/inscription" routerLinkActive="active"><h1>inscription</h1></a>
+                </li>
+                <li class="nav-item p-2">
             <a class="nav-link text-dark" routerLink="/connexion" routerLinkActive="active"><h1>Connexion</h1></a>
           </li>
           <li class="nav-item p-2">
-            <a class="nav-link text-dark"><h1>covoiturages</h1></a>
-          </li>
-          <li class="nav-item p-2"> 
-            <a class="nav-link text-dark"><h1>Contact</h1></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <main>
-    <h1 class="text-center pt-4">Qui sommes-nous?</h1>
-    <h2 class="text-center pb-4">Nous sommes une entreprise écoresponsable qui vous propose des covoiturages écologiques près de chez vous.</h2>
-    <div class="container-flex align-items-center ">
-        <div class="row justify-content-center ">
-          <div class="col-lg-4"><img src="assets/img/covoiturage-696x464.jpg"class="img-fluid rounded"></div>
-          <div class="col-lg-4 bg-primary rounded"><p class="text-dark" width="300" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit sit amet libero sed ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis enim eros, consequat sed metus eget, ultricies aliquet leo. Maecenas aliquet eu urna quis sodales. Mauris dapibus eget magna quis commodo. Vestibulum tempor scelerisque erat, vulputate vestibulum lectus ullamcorper in. Nulla sagittis rutrum tincidunt. </p></div>
-          <div class="col-lg-4"><img src="assets/img/istockphoto-1150571315-612x612.jpg"class="img-fluid rounded"></div>
-        </div>
-    </div>
-    <h1 class="text-center p-4">Besoin d'un trajet ?</h1>
-    <div class="trip-list text-center">
-        <h2>Trajets disponibles :</h2>
-        <ul>
-            <li *ngFor="let trip of trips">
-                <p>{{trip.pseudo}} - {{trip.photo}} - {{trip.note}}/5 - {{ trip.departure }} - {{ trip.destination }} - {{ trip.date }} - {{ trip.seatsAvailable }} places disponibles - {{ trip.price}} euro - éco: {{trip.eco}} </p>
+              <a class="nav-link text-dark"><h1>covoiturages</h1></a>
+            </li>
+            <li class="nav-item p-2"> 
+                <a class="nav-link text-dark"><h1>Contact</h1></a>
             </li>
         </ul>
     </div>
-</main>
+</div>
+</nav>
 <router-outlet></router-outlet>
-  <footer class="footer">
+<footer class="footer">
     <div class="container-fluid w-100 h-100 bg-primary">
       <div class="row h-100 align-items-center">
           <div class="col-6 text-center">
               <a href="#" class="text-dark">nous contacter : jose&#64;EcoRide.fr</a>
-          </div>
+            </div>
           <div class="col-6 text-center">
               <a class="text-dark" href="#">mentions légales</a>
           </div>
