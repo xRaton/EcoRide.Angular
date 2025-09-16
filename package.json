@@ -19,7 +19,9 @@
     "@angular/router": "^19.2.0",
     "@ng-bootstrap/ng-bootstrap": "^18.0.0",
     "@popperjs/core": "^2.11.8",
+    "@types/node": "^22.15.29",
     "bootstrap": "^5.3.3",
+    "mysql": "^2.18.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -30,6 +32,7 @@
     "@angular/compiler-cli": "^19.2.0",
     "@angular/localize": "^19.2.0",
     "@types/jasmine": "~5.1.0",
+    "@types/mysql": "^2.15.27",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

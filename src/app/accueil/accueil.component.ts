@@ -15,3 +15,4 @@ import { AppComponent } from '../app.component';
 export class AccueilComponent extends AppComponent{
 
 }
+

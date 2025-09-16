@@ -10,5 +10,4 @@ export const routes: Routes = [
     {path:'inscription',component:InscriptionComponent},
     {path:'connexion',component:ConnexionComponent},
     {path:'**',redirectTo:''},
-    {path:'',component:AccueilComponent},
 ];

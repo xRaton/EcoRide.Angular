@@ -1,0 +1,16 @@
+{
+  "name": "ecoride/backend",
+  "description": "Backend API REST EcoRide (PHP, PDO, JWT)",
+  "require": {
+    "php": ">=8.0",
+    "firebase/php-jwt": "^6.10",
+    "vlucas/phpdotenv": "^5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "api/"
+    }
+  }
+}
+
+
