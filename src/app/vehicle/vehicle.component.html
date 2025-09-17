@@ -1,0 +1,18 @@
+<h2>Mes véhicules</h2>
+<ul>
+  <li *ngFor="let v of vehicles">
+    {{v.marque}} {{v.modele}} ({{v.immatriculation}})
+    <button (click)="deleteVehicle(v.id)">🗑️ Supprimer</button>
+  </li>
+</ul>
+
+<h3>Ajouter un véhicule</h3>
+<input [(ngModel)]="newVehicle.immatriculation" placeholder="Immatriculation">
+<input [(ngModel)]="newVehicle.marque" placeholder="Marque">
+<input [(ngModel)]="newVehicle.modele" placeholder="Modèle">
+<input [(ngModel)]="newVehicle.couleur" placeholder="Couleur">
+<input [(ngModel)]="newVehicle.energie" placeholder="Énergie">
+<input [(ngModel)]="newVehicle.seats" type="number" placeholder="Places">
+<input [(ngModel)]="newVehicle.date_premiere_immat" type="date">
+<button (click)="addVehicle()">Ajouter</button>
+

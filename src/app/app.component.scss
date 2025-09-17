@@ -62,3 +62,34 @@ h2 {
     height: 100%;
     width: 100%;
 }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.pt-navbar {
+  padding-top: 120px; // hauteur de la navbar
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1030; // valeur Bootstrap pour navbar fixed
+}
+
+.footer {
+  width: 100%;
+  margin-top: auto;
+}

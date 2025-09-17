@@ -6,37 +6,30 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>        
-        <div class="collapse navbar-collapse justify-content-end gap-2" id="navbarCollapse">
-            <ul class="navbar-nav p-4">
-                <li class="nav-item p-2">
-                    <a class="nav-link text-dark" routerLink="/accueil" routerLinkActive="active"><h1> Accueil</h1></a>
-                </li>
-                <li class="nav-item p-2">
-                    <a class="nav-link text-dark" routerLink="/inscription" routerLinkActive="active"><h1>inscription</h1></a>
-                </li>
-                <li class="nav-item p-2">
-            <a class="nav-link text-dark" routerLink="/connexion" routerLinkActive="active"><h1>Connexion</h1></a>
-          </li>
-          <li class="nav-item p-2">
-              <a class="nav-link text-dark"><h1>covoiturages</h1></a>
-            </li>
-            <li class="nav-item p-2"> 
-                <a class="nav-link text-dark"><h1>Contact</h1></a>
-            </li>
-        </ul>
+        <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" routerLink="/rides">Trajets</a></li>
+        <li class="nav-item" *ngIf="isLoggedIn()"><a class="nav-link" routerLink="/rides/new">Proposer un trajet</a></li>
+        <li class="nav-item" *ngIf="isLoggedIn()"><a class="nav-link" routerLink="/bookings">Mes réservations</a></li>
+        <li class="nav-item" *ngIf="isLoggedIn()"><a class="nav-link" routerLink="/vehicles">Mes véhicules</a></li>
+        <li class="nav-item" *ngIf="isLoggedIn()"><a class="nav-link" routerLink="/profile">Mon profil</a></li>
+        <li class="nav-item" *ngIf="isLoggedIn()"><a class="nav-link" routerLink="/reviews">Avis</a></li>
+        <li class="nav-item" *ngIf="!isLoggedIn()"><a class="nav-link" routerLink="/login">Connexion</a></li>
+        <li class="nav-item" *ngIf="!isLoggedIn()"><a class="nav-link" routerLink="/register">Inscription</a></li>
+        <li class="nav-item" *ngIf="!isLoggedIn()"><a class="nav-link" routerLink="/accueil">Accueil</a></li>
+      </ul>
+      <button *ngIf="isLoggedIn()" (click)="logout()" class="btn btn-outline-light">
+        Déconnexion
+      </button>
     </div>
 </div>
 </nav>
+<main class="flex-fill pt-navbar">
 <router-outlet></router-outlet>
-<footer class="footer absolute-bottom">
-    <div class="container-fluid w-100 h-100 bg-primary">
-      <div class="row h-100 align-items-center">
-          <div class="col-6 text-center">
-              <a href="#" class="text-dark">nous contacter : jose&#64;EcoRide.fr</a>
-            </div>
-          <div class="col-6 text-center">
-              <a class="text-dark" href="#">mentions légales</a>
-          </div>
-      </div>
-    </div>
+</main>
+<footer class="footer bg-primary text-center py-3">
+  <div class="container d-flex justify-content-between">
+    <a class="text-dark" href="#">nous contacter : jose&#64;EcoRide.fr</a>
+    <a class="text-dark" href="#">mentions légales</a>
+  </div>
 </footer>

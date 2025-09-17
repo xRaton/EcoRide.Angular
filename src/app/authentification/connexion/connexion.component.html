@@ -1,0 +1,23 @@
+<router-outlet>
+<div class="container">
+  <h2 class="text-center pt-4" >Connexion</h2>
+<fieldset>
+  <!-- <form (ngSubmit)="onSubmit()"> -->
+    <form>
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur : </label>
+      <input type="text" id="username" [(ngModel)]="pseudo" name="pseudo" required>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="password">Mot de passe :</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+  </form>
+  <br>
+  </fieldset>
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+</div>
+</router-outlet>

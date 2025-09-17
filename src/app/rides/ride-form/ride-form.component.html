@@ -1,0 +1,19 @@
+<h2>Proposer un trajet</h2>
+
+<label>Véhicule :</label>
+<select [(ngModel)]="ride.vehicle_id">
+  <option [value]="0" disabled>-- Choisir un véhicule --</option>
+  <option *ngFor="let v of vehicles" [value]="v.id">
+    {{v.marque}} {{v.modele}} ({{v.immatriculation}})
+  </option>
+</select>
+
+<input [(ngModel)]="ride.from_city" placeholder="Ville de départ">
+<input [(ngModel)]="ride.to_city" placeholder="Ville d'arrivée">
+<input [(ngModel)]="ride.departure_time" type="datetime-local">
+<input [(ngModel)]="ride.seats" type="number" placeholder="Places">
+<input [(ngModel)]="ride.price" type="number" placeholder="Prix €">
+
+<button (click)="createRide()">Créer le trajet</button>
+
+

@@ -1,0 +1,15 @@
+<h2>Mon profil</h2>
+<div *ngIf="user">
+  <p>Pseudo : {{user.pseudo}}</p>
+  <p>Email : {{user.email}}</p>
+  <p>Rôle : {{user.role}}</p>
+  <p>Crédits : {{user.credits}}</p>
+</div>
+
+<h3>Mes transactions</h3>
+<ul>
+  <li *ngFor="let t of transactions">
+    {{t.amount}} crédits — {{t.reason}}
+  </li>
+</ul>
+

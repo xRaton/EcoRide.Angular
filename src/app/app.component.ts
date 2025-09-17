@@ -1,57 +1,27 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
 
-interface Trip {
-id: number;
-pseudo: string;
-photo: string;
-note: number;
-departure: string;
-destination: string;
-date: string;
-seatsAvailable: number;
-price: number;
-eco: boolean;
-}
+
 @Component({
   selector: 'app-root',
-  imports: [
-    FormsModule,
-    CommonModule,
-    RouterOutlet,
-    RouterModule,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, RouterLink, FormsModule],
+  templateUrl:'./app.component.html'
 })
 export class AppComponent {
-  title = 'EcoRide-app';
-  trips: Trip[] = [
-      { id: 1, pseudo: 'marc', photo :'' , note : 4, departure: 'Paris', destination: 'Lyon', date: '01-06-2025', seatsAvailable: 2, price: 15, eco: true },
-      { id: 2, pseudo: 'marc', photo :'', note : 4, departure: 'Marseille', destination: 'Nice', date: '05-06-2025', seatsAvailable: 3, price: 20, eco: true  },
-      { id: 3, pseudo: 'marc', photo :'', note : 4, departure: 'Lille', destination: 'Paris', date: '10-06-2025', seatsAvailable: 1, price: 21.5, eco: false  }
-    ];
-  
-    newTrip: Trip = {
-      id: 0,
-      pseudo:'',
-      photo:'',
-      note:0,
-      departure: '',
-      destination: '',
-      date: '',
-      seatsAvailable: 0,
-      price: 0,
-      eco: false,
-    };
-  
-    addTrip() {
-      this.newTrip.id = this.trips.length + 1;
-      this.trips.push({ ...this.newTrip });
-      this.newTrip = { id: 0, pseudo: '', photo: '', note: 0, departure: '', destination: '', date: '', seatsAvailable: 0, price: 0, eco: false, };
-    }
+  constructor(private router: Router) {}
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
 }
+
 

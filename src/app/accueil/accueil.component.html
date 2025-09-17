@@ -10,13 +10,6 @@
     </div>
   </div>
   <h1 class="text-center p-4">Besoin d'un trajet ?</h1>
-  <div class="trip-list text-center">
-    <h2>Trajets disponibles :</h2>
-      <ul>
-        <li *ngFor="let trip of trips">
-            <p>{{trip.pseudo}} - {{trip.photo}} - {{trip.note}}/5 - {{ trip.departure }} - {{ trip.destination }} - {{ trip.date }} - {{ trip.seatsAvailable }} places disponibles - {{ trip.price}} euro - éco: {{trip.eco}} </p>
-        </li>
-      </ul>
-  </div>
+  <div class="nav-item text-center"><button class="nav-link text-center" routerLink="/rides">Cliquez ici</button></div>
 </main>
 </router-outlet>

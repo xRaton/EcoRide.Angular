@@ -1,0 +1,12 @@
+<h2>Avis reçus</h2>
+<div *ngFor="let r of reviews">
+  <strong>{{r.note}}/5</strong> - {{r.commentaire}}
+</div>
+
+<h3>Poster un avis</h3>
+<input [(ngModel)]="newReview.ride_id" type="number" placeholder="ID trajet">
+<input [(ngModel)]="newReview.target_user_id" type="number" placeholder="ID utilisateur cible">
+<input [(ngModel)]="newReview.note" type="number" placeholder="Note /5">
+<textarea [(ngModel)]="newReview.commentaire" placeholder="Commentaire"></textarea>
+<button (click)="postReview()">Envoyer</button>
+

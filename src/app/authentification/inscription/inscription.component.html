@@ -1,0 +1,25 @@
+<router-outlet>
+<form (ngSubmit)="onSubmit()" class="p-4">
+  <div class="mb-3">
+    <label for="pseudo" class="form-label">Pseudo</label>
+    <input type="text" id="pseudo" class="form-control"
+           [(ngModel)]="pseudo" name="pseudo" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" id="email" class="form-control"
+           [(ngModel)]="email" name="email" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Mot de passe</label>
+    <input type="password" id="password" class="form-control"
+           [(ngModel)]="password" name="password" required>
+  </div>
+
+  <button type="submit" class="btn btn-success">S’inscrire</button>
+
+  <p *ngIf="error" class="text-danger mt-3">{{ errorMessage }}</p>
+</form>
+<router-outlet/>

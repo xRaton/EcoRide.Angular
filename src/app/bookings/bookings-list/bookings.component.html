@@ -1,0 +1,15 @@
+<h2>Réserver un trajet</h2>
+
+<label>Trajet :</label>
+<select [(ngModel)]="booking.ride_id">
+  <option [value]="0" disabled>-- Choisir un trajet --</option>
+  <option *ngFor="let r of rides" [value]="r.id">
+    {{r.from_city}} → {{r.to_city}} — {{r.departure_time}} — {{r.price}}€
+  </option>
+</select>
+
+<label>Places :</label>
+<input [(ngModel)]="booking.seats_booked" type="number" min="1">
+
+<button (click)="bookRide()">Réserver</button>
+
